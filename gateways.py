@@ -1,9 +1,13 @@
 import requests
+import os
+
+TOKEN = os.getenv("TOKEN")
+
 
 def conect_corretor_estilo(data):
     
     url = 'https://api.nlpcloud.io/v1/gpu/es/finetuned-gpt-neox-20b/gs-correction'
-    headers = {"Content-Type": "application/json", "Authorization": "Token d57cc6ffb6230c3efdb8454068bbb5213655d4e8"}
+    headers = {"Content-Type": "application/json", "Authorization": TOKEN}
 
     text = {
         "text":data
